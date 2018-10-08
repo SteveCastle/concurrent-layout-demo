@@ -4,7 +4,6 @@ const getComponent = organismPath => lazy(() => import(`${organismPath}`));
 
 export default ({ cache, componentPath, fields }) => {
   const Component = getComponent(componentPath);
-  debugger;
   return (
     <React.Placeholder delayMs={500} fallback={<div>🌀 'Loading....'</div>}>
       <Component cache={cache} {...fields} />
