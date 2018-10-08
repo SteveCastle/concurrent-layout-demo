@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { createCache, createResource } from 'simple-cache-provider';
 import { Img } from './Img';
+import Node from './Node';
 const cache = createCache();
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -14,6 +15,23 @@ const getThing = createResource(
 const Thing = props => {
   const Comp = getThing.read(cache, props);
   return <Comp {...props} />;
+};
+
+const MOCK_LAYOUT = {
+  page: {
+    layout: {
+      componentPath: './organisms/Layout/Layout',
+      fields: {
+        children: [
+          {
+            componentPath: './organisms/Header/Header',
+            fields: {},
+            title: 'Header'
+          }
+        ]
+      }
+    }
+  }
 };
 
 export default () => {
@@ -31,6 +49,10 @@ export default () => {
           }
         />
       </React.Placeholder>
+      <Node
+        componentPath={MOCK_LAYOUT.page.layout.componentPath}
+        fields={MOCK_LAYOUT.page.layout.fields}
+      />
     </Fragment>
   );
 };
