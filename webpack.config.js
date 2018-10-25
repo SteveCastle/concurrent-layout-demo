@@ -13,10 +13,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
-    alias: {
-      react: path.resolve(__dirname, './vendor/react.development'),
-      'react-dom': path.resolve(__dirname, './vendor/react-dom.development')
-    }
   },
   output: {
     path: __dirname + '/static',
