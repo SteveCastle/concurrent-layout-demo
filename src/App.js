@@ -5,19 +5,6 @@ import Node from './Node';
 import Spinner from './Spinner';
 const cache = createCache();
 
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-// Lazy load!
-const getThing = createResource(
-  () => sleep(1000).then(() => import('./Thing').then(mod => mod.default)),
-  thing => thing
-);
-
-const Thing = props => {
-  const Comp = getThing.read(cache, props);
-  return <Comp {...props} />;
-};
-
 const MOCK_LAYOUT = {
   page: {
     layout: {
@@ -26,7 +13,10 @@ const MOCK_LAYOUT = {
         children: [
           {
             componentPath: './organisms/Header/Header',
-            fields: {},
+            fields: {
+              title: 'Hello',
+              subTitle: 'To the World'
+            },
             title: 'Header'
           },
           {

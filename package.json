@@ -4,9 +4,12 @@
     "build": "webpack --config ./webpack.config.js --mode production"
   },
   "dependencies": {
-    "glamor": "^2.20.40",
+    "babel-plugin-emotion": "^9.2.11",
+    "emotion": "^9.2.12",
     "react": "^16.7.0-alpha.0",
     "react-dom": "next",
+    "react-emotion": "^9.2.12",
+    "react-spinners": "^0.4.7",
     "simple-cache-provider": "^0.10.0",
     "styled-components": "^4.0.2"
   },
