@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { createCache, createResource } from 'simple-cache-provider';
 import { Img } from './Img';
 import Node from './Node';
@@ -28,6 +28,21 @@ const MOCK_LAYOUT = {
             componentPath: './organisms/Header/Header',
             fields: {},
             title: 'Header'
+          },
+          {
+            componentPath: './organisms/Header/Header',
+            fields: {},
+            title: 'Header2'
+          },
+          {
+            componentPath: './organisms/Body/Body',
+            fields: {},
+            title: 'Body'
+          },
+          {
+            componentPath: './organisms/Footer/Footer',
+            fields: {},
+            title: 'Footer'
           }
         ]
       }
@@ -36,9 +51,10 @@ const MOCK_LAYOUT = {
 };
 
 export default () => {
+  let [layout, setLayout] = useState(MOCK_LAYOUT);
   return (
     <Fragment>
-      <h1>Hello Future</h1>
+      <h1>Hello</h1>
       <React.Suspense maxDuration={500} fallback={<Spinner />}>
         <Thing />
       </React.Suspense>
@@ -50,6 +66,10 @@ export default () => {
           }
         />
       </React.Suspense>
+      <Node
+        componentPath={layout.page.layout.componentPath}
+        fields={layout.page.layout.fields}
+      />
     </Fragment>
   );
 };

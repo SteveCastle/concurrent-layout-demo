@@ -1,11 +1,12 @@
 {
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development"
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "build": "webpack --config ./webpack.config.js --mode production"
   },
   "dependencies": {
-    "react": "next",
-    "react-dom": "next",
     "glamor": "^2.20.40",
+    "react": "^16.7.0-alpha.0",
+    "react-dom": "next",
     "simple-cache-provider": "^0.10.0"
   },
   "devDependencies": {
@@ -14,8 +15,8 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
-    "eslint": "^5.6.1",
     "webpack": "^4.20.2",
+    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9"
   }
