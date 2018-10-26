@@ -30,11 +30,6 @@ const MOCK_LAYOUT = {
             title: 'Header'
           },
           {
-            componentPath: './organisms/Header/Header',
-            fields: {},
-            title: 'Header2'
-          },
-          {
             componentPath: './organisms/Body/Body',
             fields: {},
             title: 'Body'
@@ -54,18 +49,6 @@ export default () => {
   let [layout, setLayout] = useState(MOCK_LAYOUT);
   return (
     <Fragment>
-      <h1>Hello</h1>
-      <React.Suspense maxDuration={500} fallback={<Spinner />}>
-        <Thing />
-      </React.Suspense>
-      <React.Suspense maxDuration={500} fallback={<Spinner />}>
-        <Img
-          cache={cache}
-          src={
-            'https://s3-us-west-2.amazonaws.com/punknaturalism.com/static/images/thumbnails/splendid-bullfrog-64.jpg'
-          }
-        />
-      </React.Suspense>
       <Node
         componentPath={layout.page.layout.componentPath}
         fields={layout.page.layout.fields}
