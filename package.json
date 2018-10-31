@@ -4,14 +4,13 @@
     "build": "webpack --config ./webpack.config.js --mode production"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.0-beta.6",
+    "@emotion/styled": "^10.0.0-beta.6",
     "babel-plugin-emotion": "^9.2.11",
-    "emotion": "^9.2.12",
     "react": "^16.7.0-alpha.0",
     "react-dom": "next",
-    "react-emotion": "^9.2.12",
     "react-spinners": "^0.4.7",
-    "simple-cache-provider": "^0.10.0",
-    "styled-components": "^4.0.2"
+    "simple-cache-provider": "^0.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",

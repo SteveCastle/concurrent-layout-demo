@@ -1,13 +1,18 @@
 import React, { lazy } from 'react';
+import ErrorBoundary from './ErrorBoundary';
 import Spinner from './Spinner';
 
 const getComponent = organismPath => lazy(() => import(`${organismPath}`));
 
-export default ({ componentPath, fields, hasLoader }) => {
+const Node = ({ componentPath, fields, hasLoader }) => {
   const Component = getComponent(componentPath);
   return (
-    <React.Suspense maxDuration={1000} fallback={<Spinner />}>
-      <Component {...fields} />
-    </React.Suspense>
+    <ErrorBoundary>
+      <React.Suspense maxDuration={500} fallback={<Spinner />}>
+        <Component {...fields} />
+      </React.Suspense>
+    </ErrorBoundary>
   );
 };
+
+export default Node;

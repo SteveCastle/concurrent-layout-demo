@@ -35,14 +35,14 @@ const MOCK_LAYOUT = {
   }
 };
 
-export default () => {
+const App = () => {
   let [layout, setLayout] = useState(MOCK_LAYOUT);
+  const { componentPath, fields } = layout.page.layout;
   return (
     <Fragment>
-      <Node
-        componentPath={layout.page.layout.componentPath}
-        fields={layout.page.layout.fields}
-      />
+      <Node componentPath={componentPath} fields={fields} />
     </Fragment>
   );
 };
+
+export default App;
