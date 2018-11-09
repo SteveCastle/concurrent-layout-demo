@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
 import ErrorBoundary from './ErrorBoundary';
 import Spinner from './Spinner';
 
@@ -8,9 +8,9 @@ const Node = ({ componentPath, fields, hasLoader }) => {
   const Component = getComponent(componentPath);
   return (
     <ErrorBoundary>
-      <React.Suspense maxDuration={500} fallback={<Spinner />}>
+      <Suspense maxDuration={500} fallback={<Spinner />}>
         <Component {...fields} />
-      </React.Suspense>
+      </Suspense>
     </ErrorBoundary>
   );
 };

@@ -7,7 +7,7 @@ const StyledComponent = styled.div`
 `;
 
 const Footer = () => {
-  return <StyledCompnent />;
+  return <StyledComponent />;
 };
 
 export default Footer;

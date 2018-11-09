@@ -1,9 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { createCache, createResource } from 'simple-cache-provider';
-import { Img } from './Img';
 import Node from './Node';
-import Spinner from './Spinner';
-const cache = createCache();
 
 const MOCK_LAYOUT = {
   page: {
