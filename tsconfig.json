@@ -11,5 +11,6 @@
   "awesomeTypescriptLoaderOptions": {
     "errorsAsWarnings": true
   },
+  "lib": ["dom", "es5", "es2015"],
   "include": ["./src/**/*"]
 }
