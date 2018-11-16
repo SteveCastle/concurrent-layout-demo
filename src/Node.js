@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import ErrorBoundary from './ErrorBoundary';
 import Spinner from './Spinner';
 
-const getComponent = organismPath => lazy(() => import(`${organismPath}`));
+const getComponent = componentPath => lazy(() => import(`${componentPath}`));
 
 const Node = ({ componentPath, fields, hasLoader }) => {
   const Component = getComponent(componentPath);

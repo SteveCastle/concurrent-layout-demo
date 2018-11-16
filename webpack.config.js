@@ -3,7 +3,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: './src/index.js',
   module: {
     rules: [
       {
